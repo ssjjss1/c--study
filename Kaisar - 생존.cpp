@@ -34,8 +34,13 @@ int main() {
 	for (long long i = 1; i <= n; i++) {
 		long long a = (cnt[i] + 1) / 2;
 		long long b = cnt[i] / 2;
-		if (idx) odd += a * i, even += b * i;
-		else odd += b * i, even += a * i;
+		if (idx) {
+            odd += a * i;
+            even += b * i;
+        } else {
+            odd += b * i; 
+            even += a * i;
+        }
 		idx = (idx + cnt[i]) % 2;
 	}
 	cout << even << " " << odd;
